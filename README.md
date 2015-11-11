@@ -25,7 +25,7 @@ $ heroku open
 
 ## Documentation
 
-This app listens for a `POST` at it's root from Hipchat and returns a
+This app listens for a `POST` at it's root from HipChat and returns a
 html message which is simply an image to the room. Note that this won't
 work in private chats.
 
