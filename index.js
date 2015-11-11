@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var qs = require('querystring');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -11,13 +10,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.post('/', function(request, response) {
-  var res = {
-    "color": "green",
-    "message": "It's going to be sunny tomorrow! (yey)",
-    "notify": true,
-    "message_format": "text"
-  };
-
   var body = '';
 
   request.on('data', function (data) {
@@ -29,12 +21,21 @@ app.post('/', function(request, response) {
   });
 
   request.on('end', function () {
-    var post = qs.parse(body);
-    console.log(post.event);
+    var post = JSON.parse(body);
+    console.log(post.item.message.message);
+
+    var res = {
+      "color": "blue",
+      "message": post.item.message.message,
+      "notify": true,
+      "message_format": "text"
+    };
+    
+    response.setHeader('Content-Type', 'application/json');
+    response.send(JSON.stringify(res, null, 3));
   });
 
-  response.setHeader('Content-Type', 'application/json');
-  response.send(JSON.stringify(res, null, 3));
+
 });
 
 app.listen(app.get('port'), function() {
