@@ -1,10 +1,6 @@
-# node-js-getting-started
+# Bring Back the Gifs
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
-
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+A simple node.js app to show images inline in HipChat as a /slash command integration. I made this when our administrator turned this feature off.
 
 ## Running Locally
 
@@ -29,10 +25,20 @@ $ heroku open
 
 ## Documentation
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+This app listens for a `POST` at it's root from Hipchat and returns a
+html message which is simply an image to the room. Note that this won't
+work in private chats.
 
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+Add the integration using the commands `/gif` or `/img`. Then you can do:
+
+
+```
+/gif http://keymholio.github.io/gifs/yes/yes-robert-redford.gif
+/img http://i.imgur.com/dBK2yJK.png
+```
+
+which will produce:
+
+![yes](http://keymholio.github.io/gifs/yes/yes-robert-redford.gif)
+
+![yes](http://i.imgur.com/dBK2yJK.png)
