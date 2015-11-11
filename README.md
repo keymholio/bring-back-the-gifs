@@ -26,7 +26,7 @@ $ heroku open
 ## Documentation
 
 This app listens for a `POST` at it's root from HipChat and returns a
-html message which is simply an image to the room. Note that this won't
+html message which is simply renders an image in the room. Note that this won't
 work in private chats.
 
 Add the integration using the commands `/gif` or `/img`. Then you can do:
