@@ -23,7 +23,9 @@ app.post('/', function(request, response) {
   request.on('end', function () {
     var post = JSON.parse(body);
     var msg = post.item.message.message;
-    msg = '<img src="' + msg.replace('/gif ', '') + '" />';
+    msg = msg.replace('/gif ', '');
+    msg = msg.replace('/sos ', '');
+    msg = '<img src="' + msg + '" />';
 
     var res = {
       "color": "green",
