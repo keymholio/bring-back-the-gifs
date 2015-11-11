@@ -7,8 +7,8 @@ A simple node.js app to show images inline in HipChat as a /slash command integr
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
+$ git clone git@github.com:keymholio/bring-back-the-gifs.git # or clone your own fork
+$ cd bring-back-the-gifs
 $ npm install
 $ npm start
 ```
