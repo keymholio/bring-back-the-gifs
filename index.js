@@ -23,14 +23,16 @@ app.post('/', function(request, response) {
   request.on('end', function () {
     var post = JSON.parse(body);
     console.log(post.item.message.message);
+    var msg = post.item.message.message;
+    msg = msg.replace('/gif ', '');
 
     var res = {
       "color": "blue",
-      "message": post.item.message.message,
+      "message": msg,
       "notify": true,
-      "message_format": "text"
+      "message_format": "html"
     };
-    
+
     response.setHeader('Content-Type', 'application/json');
     response.send(JSON.stringify(res, null, 3));
   });
