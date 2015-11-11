@@ -30,9 +30,7 @@ app.post('/', function(request, response) {
 
   request.on('end', function () {
     var post = qs.parse(body);
-    console.log(post);
-    console.log('divider');
-    console.log(request.body);
+    console.log(post.event);
   });
 
   response.setHeader('Content-Type', 'application/json');
