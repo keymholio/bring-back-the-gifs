@@ -3,12 +3,6 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
 app.post('/', function(request, response) {
   var body = '';
 
@@ -24,7 +18,7 @@ app.post('/', function(request, response) {
     var post = JSON.parse(body);
     var msg = post.item.message.message;
     msg = msg.replace('/gif ', '');
-    msg = msg.replace('/sos ', '');
+    msg = msg.replace('/img ', '');
     msg = '<img src="' + msg + '" />';
 
     var res = {
