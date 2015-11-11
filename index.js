@@ -23,7 +23,7 @@ app.post('/', function(request, response) {
   request.on('end', function () {
     var post = JSON.parse(body);
     var msg = post.item.message.message;
-    msg = msg.replace('/gif ', '');
+    msg = '<img src="' + msg.replace('/gif ', '') + '" />';
 
     var res = {
       "color": "green",
@@ -33,7 +33,6 @@ app.post('/', function(request, response) {
     };
 
     console.log(res);
-    
     response.setHeader('Content-Type', 'application/json');
     response.send(JSON.stringify(res, null, 3));
   });
