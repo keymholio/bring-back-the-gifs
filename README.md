@@ -1,6 +1,7 @@
 # Bring Back the Gifs
 
-A simple node.js app to show images inline in HipChat as a /slash command integration. I made this when our administrator turned this feature off.
+A simple node.js app to show images inline in HipChat via a /slash command
+integration. I made this when our administrator turned this feature off.
 
 ## Running Locally
 
@@ -25,12 +26,12 @@ $ heroku open
 
 ## Documentation
 
-This app listens for a `POST` at it's root from HipChat and returns a
+This app listens for a `POST` at its root from HipChat and returns a
 html message which is simply renders an image in the room. Note that this won't
 work in private chats.
 
-Add the integration using the commands `/gif` or `/img`. Then you can do:
-
+Add the integration in HipChat's webclient using either the `/gif` or `/img`
+slash commands. Then you can do:
 
 ```
 /gif http://keymholio.github.io/gifs/yes/yes-robert-redford.gif
