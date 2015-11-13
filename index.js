@@ -17,20 +17,28 @@ app.post('/', function(request, response) {
   request.on('end', function () {
     var post = JSON.parse(body);
     var msg = post.item.message.message;
+    // regex to match image url
+    var re = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?(.gif|.jpg|.png)$/;
+
     msg = msg.replace('/gif ', '');
     msg = msg.replace('/img ', '');
-    msg = '<img src="' + msg + '" />';
 
-    var res = {
-      "color": "green",
-      "message": msg,
-      "notify": true,
-      "message_format": "html"
-    };
+    // if valid url
+    if (msg.match(re)) {
+      msg = '<img src="' + msg + '" />';
 
-    console.log(res);
-    response.setHeader('Content-Type', 'application/json');
-    response.send(JSON.stringify(res, null, 3));
+      var res = {
+        "color": "green",
+        "message": msg,
+        "notify": true,
+        "message_format": "html"
+      };
+
+      response.setHeader('Content-Type', 'application/json');
+      response.send(JSON.stringify(res, null, 3));
+    } else {
+      response.status(500).send('Invalid image url! (Yes, I\'m shouting)');
+    }
   });
 
 
