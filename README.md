@@ -30,16 +30,29 @@ This app listens for a `POST` at its root from HipChat and returns a
 html message which is simply renders an image in the room. Note that this won't
 work in private chats.
 
-Add the integration in HipChat's webclient using either the `/gif` or `/img`
-slash commands. Then you can do:
+Add the integration in HipChat's web client using either the `/gif` or `/img`
+slash commands.
+
+#### Adding a HipChat integration
+
+- Log in to HipChat
+- Click "Rooms"
+- Click "My Rooms"
+- Select the room you want to add the integration to
+- Click "Integrations"
+- Click "Build you own integration"
+- Name your integration (ie. "gif-bot")
+- Check "Add a command"
+- Add the slash command `/gif` or `/img`
+- Add the Heroku url
+- Save!
+
+Then you can do:
 
 ```
 /gif http://keymholio.github.io/gifs/yes/yes-robert-redford.gif
-/img http://i.imgur.com/dBK2yJK.png
 ```
 
 which will produce:
 
 ![yes](http://keymholio.github.io/gifs/yes/yes-robert-redford.gif)
-
-![yes](http://i.imgur.com/dBK2yJK.png)
