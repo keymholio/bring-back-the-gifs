@@ -1,8 +1,8 @@
 {
-  "name": "Node.js Getting Started",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "name": "Bring Back the Gifs",
+  "description": "Bring back gifs in HipChat if an admin turns them off.",
+  "repository": "https://github.com/keymholio/bring-back-the-gifs",
+  "logo": "http://keymholio.github.io/gifs/yes/yes-robert-redford.gif",
   "keywords": ["node", "express", "static"],
   "image": "heroku/nodejs"
 }
