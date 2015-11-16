@@ -3,6 +3,8 @@
 A simple node.js app to show images inline in HipChat via a /slash command
 integration. I made this when our administrator turned this feature off.
 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
