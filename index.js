@@ -18,7 +18,7 @@ app.post('/', function(request, response) {
     var post = JSON.parse(body);
     var msg = post.item.message.message;
     // regex to match image url
-    var re = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?(.gif|.jpg|.png)$/;
+    var re = /^(http|https):\/\/.*$/;
 
     msg = msg.replace('/gif ', '');
     msg = msg.replace('/img ', '');
